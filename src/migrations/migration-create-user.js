@@ -23,11 +23,11 @@ module.exports = {
             },
             address: {
                 allowNull: false,
-                type: Sequelize.DATE,
+                type: Sequelize.STRING,
             },
             gender: {
                 allowNull: false,
-                type: Sequelize.DATE,
+                type: Sequelize.BOOLEAN,
             },
             roleId: {
                 allowNull: false,
