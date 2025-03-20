@@ -29,11 +29,19 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE,
             },
-            typeRole: {
+            roleId: {
                 allowNull: false,
                 type: Sequelize.STRING,
             },
-            keyRole: {
+            phonenumber: {
+                allowNull: false,
+                type: Sequelize.STRING,
+            },
+            positionId: {
+                allowNull: false,
+                type: Sequelize.STRING,
+            },
+            image: {
                 allowNull: false,
                 type: Sequelize.STRING,
             },
