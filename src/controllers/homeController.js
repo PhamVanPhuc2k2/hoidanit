@@ -25,9 +25,6 @@ const postCRUD = async (req, res) => {
 
 const displayGetCRUD = async (req, res) => {
     const data = await CRUDService.getAllUser();
-    console.log('-----------------------');
-    console.log(data);
-    console.log('-----------------------');
     return res.render('displayCRUD.ejs', {
         dataTable: data,
     });
@@ -54,6 +51,16 @@ const putCRUD = async (req, res) => {
     });
 };
 
+const deleteCRUD = async (req, res) => {
+    let id = req.query.id;
+    if (id) {
+        await CRUDService.deleteUserById(id);
+        return res.send('xoa thanh cong');
+    } else {
+        return res.send('khong tim thay user');
+    }
+};
+
 export default {
     getHomePage: getHomePage,
     getCRUD: getCRUD,
@@ -61,4 +68,5 @@ export default {
     displayGetCRUD: displayGetCRUD,
     getEditCRUD: getEditCRUD,
     putCRUD: putCRUD,
+    deleteCRUD: deleteCRUD,
 };

@@ -91,9 +91,26 @@ const updataUserData = (data) => {
     });
 };
 
+const deleteUserById = (userId) => {
+    return new Promise(async (resole, reject) => {
+        try {
+            let user = await db.User.findOne({
+                where: { id: userId },
+            });
+            if (user) {
+                await user.destroy();
+            }
+            resole();
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 export default {
     createNewUser: createNewUser,
     getAllUser: getAllUser,
     getUserInfoById: getUserInfoById,
     updataUserData: updataUserData,
+    deleteUserById: deleteUserById,
 };
